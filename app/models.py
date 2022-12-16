@@ -6,6 +6,7 @@ class Post(models.Model):
   project = models.CharField(max_length=255, blank=False, null=False, unique=True)
   description = models.TextField(blank=True, null=False)
   team = models.CharField(max_length=255, blank=False, null=False)
+  url = models.URLField(max_length=200)
   pm = models.CharField(max_length=255, blank=False, null=False)
   second_menber = models.CharField(max_length=255, blank=False, null=False)
   third_menber = models.CharField(max_length=255, blank=False, null=False)
