@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .models import Post
 
 # Create your views here.
-def index(request):
-  return render(request, 'app/index.html')
+class Top(ListView):
+  model = Post
+  

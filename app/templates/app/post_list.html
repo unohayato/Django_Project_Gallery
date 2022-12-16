@@ -8,5 +8,14 @@
 </head>
 <body>
   <h1>Hello</h1>
+  {% for item in object_list %}
+    <ul>
+      <li>
+        <a href="#">プロジェクト名：{{ item.project }}</a>
+        <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
+      </li>
+    </ul>
+  {% endfor %}
+
 </body>
 </html>
