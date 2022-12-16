@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample</title>
+</head>
+<body>
+  <h2>プロジェクト名：{{ object.project }}</h2>
+  <p>作成日 : {{ object.created_at }} | 更新日 : {{ object.updated_at }}</p>
+  <div>
+    <h3>チーム名：{{ object.team }}</h3>
+    <p>
+      プロジェクトマネージャ- : {{ object.pm }} | 
+      メンバー1 : {{ object.second_menber }} | 
+      メンバー2 : {{ object.third_menber }}
+    </p>
+
+    <h3>概要</h3>
+    <p>{{ object.description }}</p>
+
+    <h3>Github</h3>
+    <p>{{ object.url }}</p>
+
+  </div> 
+
+</body>
+</html>

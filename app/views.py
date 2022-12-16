@@ -6,3 +6,6 @@ from .models import Post
 class Top(ListView):
   model = Post
   
+class Detail(DetailView):
+  model = Post
+  
