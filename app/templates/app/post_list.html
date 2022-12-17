@@ -13,10 +13,10 @@
       <li>
         <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
         <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
+        <p>カテゴリー : {{ item.category }}</p>
       </li>
     </ul>
   {% endfor %}
   <p><a href="{% url 'create' %}">新規投稿</a></p>
-
 </body>
 </html>

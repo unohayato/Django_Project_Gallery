@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Category
 
 # Create your views here.
 class Top(ListView):
@@ -11,13 +11,13 @@ class Detail(DetailView):
   
 class Create(CreateView):
   model = Post
-  fields = ['project', 'description', 'team', 'pm', 'second_menber', 'third_menber', 'url']
+  fields = ['project', 'description', 'category', 'team', 'pm', 'second_menber', 'third_menber', 'url']
   
   success_url = '/'
   
 class Update(UpdateView):
   model = Post
-  fields = ['project', 'description', 'team', 'pm', 'second_menber', 'third_menber', 'url']
+  fields = ['project', 'description','category','team', 'pm', 'second_menber', 'third_menber', 'url']
   
   success_url = '/'
   
