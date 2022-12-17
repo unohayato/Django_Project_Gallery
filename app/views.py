@@ -14,4 +14,10 @@ class Create(CreateView):
   fields = ['project', 'description', 'team', 'pm', 'second_menber', 'third_menber', 'url']
   
   success_url = '/'
+  
+class Update(UpdateView):
+  model = Post
+  fields = ['project', 'description', 'team', 'pm', 'second_menber', 'third_menber', 'url']
+  
+  success_url = '/'
 
