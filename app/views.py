@@ -20,4 +20,9 @@ class Update(UpdateView):
   fields = ['project', 'description', 'team', 'pm', 'second_menber', 'third_menber', 'url']
   
   success_url = '/'
+  
+class Delete(DeleteView):
+  model = Post
+  
+  success_url = '/'
 
