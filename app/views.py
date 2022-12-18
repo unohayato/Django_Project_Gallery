@@ -5,6 +5,8 @@ from .models import Post, Category
 # Create your views here.
 class Top(ListView):
   model = Post
+  paginate_by = 2
+  
   
 class Detail(DetailView):
   model = Post
