@@ -17,43 +17,46 @@
         </nav>
     </header>
     <hr>
-    {% for item in object_list %}
-    <ul>
-        <li>
-        <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
-        <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
-        <p>カテゴリー : {{ item.category }}</p>
-        </li>
-    </ul>
-    {% endfor %}
-    <p><a href="{% url 'create' %}">新規投稿</a></p>
+    <main id="main">
 
-    <ul>
-    {% if page_obj.has_previous %}
-        <li>
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-                <span aria-hidden="true">&laquo;</span>
+        {% for item in object_list %}
+        <ul>
+            <li>
+                <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
+                <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
+                <p>カテゴリー : {{ item.category }}</p>
+            </li>
+        </ul>
+        {% endfor %}
+        <p><a href="{% url 'create' %}">新規投稿</a></p>
+        
+        <ul>
+            {% if page_obj.has_previous %}
+            <li>
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                    <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-    {% endif %}
-
-    {% for num in page_obj.paginator.page_range %}
-        {% if num <= page_obj.number|add:5 and num >= page_obj.number|add:-5 %}
-
-            {% if page_obj.number == num %}
-                <li><a href="#">{{ num }}</a></li>
-            {% else %}
-                <li><a href="?page={{ num }}">{{ num }}</a></li>
-            {% endif %}
         {% endif %}
-    {% endfor %}
-
-    {% if page_obj.has_next %}
+        
+        {% for num in page_obj.paginator.page_range %}
+        {% if num <= page_obj.number|add:5 and num >= page_obj.number|add:-5 %}
+        
+        {% if page_obj.number == num %}
+        <li><a href="#">{{ num }}</a></li>
+        {% else %}
+        <li><a href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        
+        {% if page_obj.has_next %}
         <li>
             <a href="?page={{ page_obj.next_page_number }}">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
-    {% endif %}
+        {% endif %}
+    </main>
 </body>
 </html>
