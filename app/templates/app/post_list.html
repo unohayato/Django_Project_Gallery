@@ -11,37 +11,53 @@
         <h1>Gallery</h1>
         <nav>
             <ul>
-                <li><a href="#">あああ</a></li>
-                <li><a href="#">いいい</a></li>
+                <li><a href="{% url 'top' %}">ホーム</a></li>
+                <li><a href="#about">概要</a></li>
+                <li><a href="#list">一覧</a></li>
+                <li><a href="#new">新規投稿</a></li>
             </ul>
         </nav>
     </header>
     <hr>
-    <main id="main">
 
-        {% for item in object_list %}
-        <ul>
-            <li>
-                <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
-                <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
-                <p>カテゴリー : {{ item.category }}</p>
-            </li>
-        </ul>
-        {% endfor %}
-        <p><a href="{% url 'create' %}">新規投稿</a></p>
+    <main id="main">
+        <div id="about">
+            <h2>概要</h2>
+            <p>
+                {% lorem 5 b random %}
+            </p>
+        </div>
+
+        <div id="list">
+            <h2>一覧</h2>
+            {% for item in object_list %}
+            <ul>
+                <li>
+                    <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
+                    <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
+                    <p>カテゴリー : {{ item.category }}</p>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+
+        <div id="new">
+
+            <h2><a href="{% url 'create' %}">新規投稿</a></h2>
+        </div>
         
         <ul>
             {% if page_obj.has_previous %}
             <li>
                 <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
                     <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        {% endif %}
+                </a>
+            </li>
+            {% endif %}
         
         {% for num in page_obj.paginator.page_range %}
         {% if num <= page_obj.number|add:5 and num >= page_obj.number|add:-5 %}
-        
+
         {% if page_obj.number == num %}
         <li><a href="#">{{ num }}</a></li>
         {% else %}
@@ -57,6 +73,7 @@
             </a>
         </li>
         {% endif %}
+
     </main>
     <hr>
     <footer id="footer">
