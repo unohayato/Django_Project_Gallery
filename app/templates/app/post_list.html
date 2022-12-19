@@ -7,19 +7,28 @@
   <title>Sample</title>
 </head>
 <body>
-  <h1>Hello</h1>
-  {% for item in object_list %}
+    <header id="header" class="wraper">
+        <h1>Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="#">あああ</a></li>
+                <li><a href="#">いいい</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    {% for item in object_list %}
     <ul>
-      <li>
+        <li>
         <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
         <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
         <p>カテゴリー : {{ item.category }}</p>
-      </li>
+        </li>
     </ul>
-  {% endfor %}
-  <p><a href="{% url 'create' %}">新規投稿</a></p>
+    {% endfor %}
+    <p><a href="{% url 'create' %}">新規投稿</a></p>
 
-  <ul>
+    <ul>
     {% if page_obj.has_previous %}
         <li>
             <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
