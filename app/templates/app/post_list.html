@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample</title>
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'app/css/list_style.css' %}">
 </head>
 <body>
-    
+
     <header id="header" class="wrapper">
         <h1 class="site-title">
             <a href="{% url 'top' %}">Gallery</a>
@@ -25,7 +25,7 @@
         </nav>
     </header>
 
-    <hr>
+    <hr id="header-hr">
 
     <main id="main">
         <div id="about" class="wrapper">
@@ -42,48 +42,24 @@
                 <li>
                     <a href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
                     <p>作成日：{{ item.created_at }} | 更新日：{{ item.updated_at }}</p>
-                    <p>カテゴリー : {{ item.category }}</p>
+                    <p>セメスター : {{ item.category }}</p>
                 </li>
             </ul>
             {% endfor %}
         </div>
 
-        <div id="new" class="wrapper">
-            <h2 class="sub-title"><a href="{% url 'create' %}">新規投稿</a></h2>
-        </div>
-        
-        <ul>
-            {% if page_obj.has_previous %}
-            <li>
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            {% endif %}
-        
-        {% for num in page_obj.paginator.page_range %}
-        {% if num <= page_obj.number|add:5 and num >= page_obj.number|add:-5 %}
 
-        {% if page_obj.number == num %}
-        <li><a href="#">{{ num }}</a></li>
-        {% else %}
-        <li><a href="?page={{ num }}">{{ num }}</a></li>
-        {% endif %}
-        {% endif %}
-        {% endfor %}
         
-        {% if page_obj.has_next %}
-        <li>
-            <a href="?page={{ page_obj.next_page_number }}">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-        {% endif %}
+        <section id="new" class="wrapper">
+            <h2 class="sub-title">新規投稿</h2>
+            <h3 class="sub2-title">新しいプロジェクトを投稿しよう！</h3>
+            <p><a href="{% url 'create' %}">投稿画面へ</a></p>
+        </section>
 
     </main>
-
+    
     <hr>
-
+    
     <footer id="footer">
         <p>&copy; 2022-</p>
     </footer>

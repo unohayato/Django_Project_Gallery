@@ -29,10 +29,15 @@ li {
   display: inline-block;
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   border-bottom: solid 1px #383e45;
 }
 
+.sub2-title {
+  font-size: 1rem;
+  margin: 10px 0;
+  margin-bottom: 10px;
+}
 
 .wrapper {
   max-width: 960px;
@@ -45,7 +50,6 @@ li {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  
 }
 
 #header ul {
@@ -65,8 +69,30 @@ li {
   opacity: 0.7;
 }
 
+#header-hr {
+  margin-bottom: 50px;
+}
+
 #main {
 
+}
+
+#about {
+  margin-bottom: 50px;
+}
+
+#list {
+  margin-bottom: 50px;
+}
+
+#list ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#new {
+  margin-bottom: 10px;
 }
 
 #footer {
