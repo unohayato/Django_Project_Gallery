@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,26 +6,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="{% static 'app/css/detail_style.css' %}">
 </head>
+
 <body>
-  <h2>プロジェクト名：{{ object.project }}</h2>
-  <p>作成日 : {{ object.created_at }} | 更新日 : {{ object.updated_at }}</p>
-  <div>
-    <h3>チーム名：{{ object.team }}</h3>
-    <p>
-      プロジェクトマネージャ- : {{ object.pm }} | 
-      メンバー1 : {{ object.second_menber }} | 
-      メンバー2 : {{ object.third_menber }}
-    </p>
 
-    <h3>概要</h3>
-    <p>{{ object.description }}</p>
+  <header id="header" class="wrapper">
+    <h1 class="site-title">
+        <a href="{% url 'top' %}">Gallery</a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'top' %}">ホーム</a></li>
+            <li><a href="#about">概要</a></li>
+            <li><a href="#list">一覧</a></li>
+            <li><a href="#new">新規投稿</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <h3>Github</h3>
-    <a href="{{ object.url }}">{{ object.url }}</a>
-  </div> 
-  <p><a href="{% url 'update' object.pk %}">更新</a></p>
-  <p><a href="{% url 'delete' object.pk %}">削除</a></p>
+<hr id="header-hr">
+  <div class="content">
+    <h2 id="sub-title">プロジェクト名：{{ object.project }}</h2>
+    <p>作成日 : {{ object.created_at }} | 更新日 : {{ object.updated_at }}</p>
+
+    <div id="detail">
+      <h3 id="sub2-title">チーム名：{{ object.team }}</h3>
+      <p>
+        プロジェクトマネージャ- : {{ object.pm }} | 
+        メンバー1 : {{ object.second_menber }} | 
+        メンバー2 : {{ object.third_menber }}
+      </p>
+      
+      <h3 id="sub2-title">概要</h3>
+      <p>{{ object.description }}</p>
+      
+      <h3 id="sub2-title">Github</h3>
+      <a href="{{ object.url }}">{{ object.url }}</a>
+    </div>
+
+    <p><a href="{% url 'update' object.pk %}">更新</a></p>
+    <p><a href="{% url 'delete' object.pk %}">削除</a></p>
+
+  </div>
+  
+  <hr>
+    
+  <footer id="footer">
+      <p>&copy; 2022-</p>
+  </footer>
 
 </body>
 </html>
