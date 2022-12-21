@@ -46,6 +46,9 @@ li {
   text-align: center;
 }
 
+
+
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -73,9 +76,7 @@ li {
   margin-bottom: 50px;
 }
 
-#main {
 
-}
 
 #about {
   margin-bottom: 50px;
@@ -94,6 +95,10 @@ li {
 #new {
   margin-bottom: 10px;
 }
+
+
+
+
 
 #footer {
   font-size: 0.7rem;

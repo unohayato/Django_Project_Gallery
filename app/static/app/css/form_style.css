@@ -46,6 +46,12 @@ li {
   text-align: center;
 }
 
+
+
+
+
+
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -75,8 +81,21 @@ li {
 
 
 
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#main .content-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
 
+#main .content {
+  flex-direction: column;
+  text-align: left;
+}
 
 
 
