@@ -10,42 +10,44 @@
   <link rel="stylesheet" href="{% static 'app/css/form_style.css' %}">
 </head>
 <body>
+  <div class="container">
 
-  <header id="header" class="wrapper">
-    <h1 class="site-title">
+    <header id="header" class="wrapper">
+      <h1 class="site-title">
         <a href="{% url 'top' %}">Gallery</a>
-    </h1>
-    <nav>
+      </h1>
+      <nav>
         <ul>
             <li><a href="{% url 'top' %}">ホーム</a></li>
             <li><a href="#about">概要</a></li>
             <li><a href="#list">一覧</a></li>
             <li><a href="#new">新規投稿</a></li>
-        </ul>
-    </nav>
-  </header>
-
-<hr id="header-hr">
-
-  <main id="main">
-    <div class="content">
-      <div class="content-title">
-        <h2 class="sub-title">新規投稿</h2>
-      </div>
+          </ul>
+        </nav>
+      </header>
       
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit", value="投稿">
-      </form>
+      <hr id="header-hr">
+      
+      <main id="main">
+        <div class="content">
+          <div class="content-title">
+            <h2 class="sub-title">新規投稿</h2>
+          </div>
+          
+          <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit", value="投稿">
+          </form>
+        </div>
+      </main>
+      
+      <hr>
+      
+      <footer id="footer">
+        <p>&copy; 2022-</p>
+      </footer>
+      
     </div>
-  </main>
-
-<hr>
-    
-  <footer id="footer">
-      <p>&copy; 2022-</p>
-  </footer>
-
-</body>
-</html>
+    </body>
+    </html>

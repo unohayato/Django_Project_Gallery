@@ -11,7 +11,9 @@
 </head>
 
 <body>
+  <div class="container">
 
+    
     <header id="header" class="wrapper">
       <h1 class="site-title">
         <a href="{% url 'top' %}">Gallery</a>
@@ -27,9 +29,9 @@
     </header>
     
     <hr id="header-hr">
-
+    
     <main id="main">
-
+      
       <div class="content">
         <h2 id="sub-title">プロジェクト名：{{ object.project }}</h2>
         <p>作成日 : {{ object.created_at }} | 更新日 : {{ object.updated_at }}</p>
@@ -48,21 +50,23 @@
           <h3 id="sub2-title">Github</h3>
           <a href="{{ object.url }}">{{ object.url }}</a>
         </div>
-      <div>
-
-      <div class="content-change">
-        <p><a href="{% url 'update' object.pk %}">更新</a></p>
-        <p><a href="{% url 'delete' object.pk %}">削除</a></p>
+        <div>
+          
+          <div class="content-change">
+            <p><a href="{% url 'update' object.pk %}">更新</a></p>
+            <p><a href="{% url 'delete' object.pk %}">削除</a></p>
+          </div>
+          
+        </main>
+        
+        <hr>
+        
+        <footer id="footer">
+          <p>&copy; 2022-</p>
+        </footer>
+        
       </div>
-    
-    </main>
-  
-  <hr>
-  
-  <footer id="footer">
-    <p>&copy; 2022-</p>
-  </footer>
-  
-
-</body>
-</html>
+        
+      </body>
+      </html>
+      

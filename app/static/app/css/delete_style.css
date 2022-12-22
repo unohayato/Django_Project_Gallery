@@ -46,6 +46,14 @@ li {
   text-align: center;
 }
 
+.container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+
+}
+
 #header {
   display: flex;
   justify-content: space-between;
@@ -85,9 +93,11 @@ li {
 
 
 
-
 #footer {
+  width: 100%;
   font-size: 0.7rem;
   text-align: center;
   padding: 10px 0;
+  position: absolute;
+  bottom: 0;
 }
