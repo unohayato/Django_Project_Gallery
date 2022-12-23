@@ -3,23 +3,23 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
-  name = models.CharField(max_length=255, blank=False, null=False)
+  name = models.CharField(verbose_name="セメスター", max_length=255, blank=False, null=False)
   
   def __str__(self):
     return self.name
   
 
 class Post(models.Model):
-  project = models.CharField(max_length=255, blank=False, null=False, unique=True)
-  description = models.TextField(blank=True, null=False)
-  team = models.CharField(max_length=255, blank=False, null=False)
-  url = models.URLField(max_length=200)
-  pm = models.CharField(max_length=255, blank=False, null=False)
-  second_menber = models.CharField(max_length=255, blank=False, null=False)
-  third_menber = models.CharField(max_length=255, blank=False, null=False)
-  created_at = models.DateTimeField(auto_now_add=True, editable=False, blank=False, null=False)
-  updated_at = models.DateTimeField(auto_now=True, editable=False, blank=False, null=False)
-  category = models.ForeignKey(Category, null=False, on_delete=models.CASCADE)
+  project = models.CharField(verbose_name="プロジェクト名", max_length=255, blank=False, null=False, unique=True)
+  description = models.TextField(verbose_name="プロジェクト概要", blank=True, null=False)
+  team = models.CharField(verbose_name="チーム名",max_length=255, blank=False, null=False)
+  url = models.URLField(verbose_name="URL",max_length=200)
+  pm = models.CharField(verbose_name="プロジェクトマネージャー",max_length=255, blank=False, null=False)
+  second_menber = models.CharField(verbose_name="メンバー1",max_length=255, blank=False, null=False)
+  third_menber = models.CharField(verbose_name="メンバー2",max_length=255, blank=False, null=False)
+  created_at = models.DateTimeField(verbose_name="作成日",auto_now_add=True, editable=False, blank=False, null=False)
+  updated_at = models.DateTimeField(verbose_name="更新日",auto_now=True, editable=False, blank=False, null=False)
+  category = models.ForeignKey(Category, verbose_name="セメスター",null=False, on_delete=models.CASCADE)
   
   def __str__(self):
     return self.project
