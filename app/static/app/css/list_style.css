@@ -56,6 +56,8 @@ li {
   margin: 0 auto;
 }
 
+
+
 #header ul {
   display: flex;
   padding: 20px 0;
@@ -81,6 +83,7 @@ li {
 
 #about {
   margin-bottom: 50px;
+  
 }
 
 #list {
@@ -94,9 +97,11 @@ li {
 }
 
 
+
 #new {
   margin-bottom: 10px;
 }
+
 
 
 
@@ -108,3 +113,4 @@ li {
   text-align: center;
   padding: 10px 0;
 }
+
