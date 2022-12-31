@@ -87,6 +87,10 @@ li {
   
 }
 
+#about p {
+  font-size: 2rem;
+}
+
 #list {
   margin-bottom: 50px;
 }
