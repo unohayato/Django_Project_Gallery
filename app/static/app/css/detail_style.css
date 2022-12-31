@@ -84,12 +84,9 @@ li {
 
 
 #main .content {
-  text-align: center;
+  text-align: left;
 }
 
-#main #detail p {
-  color: pink;
-}
 
 
 
