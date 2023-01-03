@@ -2,23 +2,20 @@
 {% load static %}
 
 {% block content %}
-  <div class="container">
 
-    <main id="main">
-
-      <div class="content">
-        <div class="content-title">
-        <h2 class="sub-title">新規投稿</h2>
-      </div>
       
-      <form method="post">
+  <main id="main" class="container">
+    <div class="content">
+      <div class="content-title">
+        <h2 class="sub-title">{{ new }}</h2>
+      </div>
+        
+      <form method="post" id="form">
         {% csrf_token %}
-        {{ form.as_p }} 
-        <input type="submit", value="投稿">
+        {{ form.as_p }} <br>
+        <input id="btn" type="submit", value="{{ new_btn }}">
       </form>
-
-    </main>
-
-  </div>
+    </div>
+  </main>    
 
 {% endblock content %}

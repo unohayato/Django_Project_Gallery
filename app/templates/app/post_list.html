@@ -7,29 +7,52 @@
         <div id="about" class="wrapper">
             <h2 class="sub-title">概要</h2>
             <p>
-                ポートフォリオサイトです。<br>
-                これまでの作品の一覧を見ることができます。
+                これまで作った作品の一覧です。
             </p>
         </div>
-        
+
         <div id="list" class="wrapper">
             <h2 class="sub-title">一覧</h2>
-            {% for item in object_list %}
-            <ul>
-                <li>
-                    <a class="list-title" href="{% url 'detail' item.pk %}">プロジェクト名：{{ item.project }}</a>
-                    <p>作成日：{{ item.created_at }}</p>
-                    <p>セメスター : {{ item.category }}</p>
-                </li>
-            </ul>
-            {% endfor %}
+            <div class="list-wrapper">
+                {% for item in object_list %}
+                <ul class="list-ul">
+                    <li class="list-link">
+                        <a href="{% url 'detail' item.pk %}">
+                            <div class="card card-skin">
+                                <div class="card__textbox">
+                                    <div class="card_category_text">
+                                        {{ item.category }}
+                                    </div>
+                                    <div class="card_contents">
+                                        <div class="card__titletext">
+                                            {{ item.project }}
+                                        </div>
+                                        <div class="card_team">
+                                        チーム_{{ item.team }}     
+                                        </div>
+                                        <div class="card__created_at">
+                                            {{ item.created_at }}   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
         </div>
-    
+
+        
+
+
+        
         <section id="new" class="wrapper">
             <h2 class="sub-title">新規投稿</h2>
             <h3 class="sub2-title">新しいプロジェクトを投稿しよう！</h3>
-            <p><a href="{% url 'create' %}">投稿画面へ</a></p>
+            <a id="home-new-btn" href="{% url 'create' %}">投稿画面</a>
         </section>
-    </main>
 
+    </main>
+    
 {% endblock content %}
