@@ -1,21 +1,20 @@
 {% extends 'app/base.html' %}
 {% load static %}
-
 {% block content %}
 
-      
-  <main id="main" class="container">
-    <div class="content">
-      <div class="content-title">
-        <h2 class="sub-title">{{ new }}</h2>
-      </div>
-        
+<main id="form-main">
+  <div class="content-title">
+    <h2 class="sub-title">{{ new }}</h2>
+  </div>
+  
+  <div class="form-card-skin">
+    <div class="form-card-textbox">
       <form method="post" id="form">
         {% csrf_token %}
-        {{ form.as_p }} <br>
-        <input id="btn" type="submit", value="{{ new_btn }}">
+        {{ form.as_p }}
+        <input id="{{ btn }}" type="submit", value="{{ new_btn }}">
       </form>
-    </div>
-  </main>    
+    </div>    
+  </div>      
 
 {% endblock content %}
