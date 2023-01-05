@@ -14,6 +14,7 @@
         <div id="list" class="wrapper">
             <h2 class="sub-title">一覧</h2>
             <div class="list-wrapper">
+                {% if object_list %}
                 {% for item in object_list %}
                 <ul class="list-ul">
                     <li class="list-link">
@@ -28,7 +29,7 @@
                                             {{ item.project }}
                                         </div>
                                         <div class="card_team">
-                                        チーム_{{ item.team }}     
+                                            チーム_{{ item.team }}     
                                         </div>
                                         <div class="card__created_at">
                                             {{ item.created_at }}   
@@ -40,6 +41,9 @@
                     </li>
                 </ul>
                 {% endfor %}
+                {% else %}
+                    <p id="empty-case-text">投稿がありません。</p>
+                {% endif %}
             </div>
         </div>
 
